@@ -1,0 +1,9 @@
+sudo: required
+language: bash
+services: docker
+
+before_install:
+  - docker build -t xdebug-ini-test .
+
+script:
+  - docker run -it --rm xdebug-ini-test /bin/bash tests.sh
