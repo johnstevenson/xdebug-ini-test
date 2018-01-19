@@ -12,7 +12,7 @@ By default xdebug-handler concatenates all ini files into a temporary php.ini, w
 
 Because there is currently no way to obtain the PHP command-line arguments, a more robust method is to compare the ini settings of the current process with the content of the loaded ini files, and merge missing or changed values into the temporary ini by appending them to the end of the file.
 
-However this will slow the restart process because:
+However this will generally slow the restart process because:
 
 - More work is needed to prepare the file.
 - The ini will contain many default values and will take longer to parse.
@@ -20,9 +20,9 @@ However this will slow the restart process because:
 This repo provides methods for measuring and comparing the extra time that this takes.
 
 ### Tests
-There are two main types of test; The _Simple_ tests run a PHP script that restarts the process, while the _Composer_ tests use a modified composer.phar to run `composer --version` with xdebug-handler output.
+There are two main types of test; The _Simple_ tests run a PHP script that always restarts the process, while the _Composer_ tests use a modified composer.phar to run `composer --version` with xdebug-handler output.
 
-Both these tests types accept a `--merge-inis` argument, so that they can be run using both of the ini creation methods outlined above. Timing values are shown for the overall restart, as well as the time taken to create ini content. The number of ini files parsed is also shown, together with the number of entries in the new ini (_Simple_ tests only).
+Both these tests types accept a `--merge-inis` argument, so that they can be run using both of the ini creation methods outlined above. Timing values are shown for the overall restart, as well as the time taken to create ini content. The number of ini files parsed is also shown, together with the number of entries in the new ini.
 
 The ini files created by the _Simple_ tests are saved as `tmp-ini` and `tmp-merged.ini` in the working directory.
 

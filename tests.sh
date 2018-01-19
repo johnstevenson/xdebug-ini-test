@@ -32,7 +32,7 @@ echo
 
 COUNTER=0
 while [  $COUNTER -lt 3 ]; do
-    php composer-xdebug.phar --version --verbose
+    php composer-xdebug.phar --version
     let COUNTER=COUNTER+1
     echo
 done
@@ -44,7 +44,7 @@ echo
 
 COUNTER=0
 while [  $COUNTER -lt 3 ]; do
-    php composer-xdebug.phar --version --verbose --merge-inis
+    php composer-xdebug.phar --version --merge-inis
     let COUNTER=COUNTER+1
     echo
 done
