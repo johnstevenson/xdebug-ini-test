@@ -24,6 +24,8 @@ There are two main types of test; The _Simple_ tests run a PHP script that resta
 
 Both these tests types accept a `--merge-inis` argument, so that they can be run using both of the ini creation methods outlined above. Timing values are shown for the overall restart, as well as the time taken to create ini content. The number of ini files parsed is also shown, together with the number of entries in the new ini (_Simple_ tests only).
 
+The ini files created by the _Simple_ tests are saved as `tmp-ini` and `tmp-merged.ini` in the working directory.
+
 ### Usage
 Clone this repo somewhere:
 
