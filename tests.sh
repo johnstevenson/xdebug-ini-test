@@ -1,13 +1,20 @@
 #!/bin/bash
 
 echo
+echo Ini File Status
+echo ---------------
+echo
+php IniStatus.php
+echo
+
+echo
 echo Simple Test
 echo -----------
 echo
 
 COUNTER=0
 while [  $COUNTER -lt 3 ]; do
-    php SimpleTests.php
+    php SimpleTest.php
     let COUNTER=COUNTER+1
     echo
 done
@@ -19,7 +26,7 @@ echo
 
 COUNTER=0
 while [  $COUNTER -lt 3 ]; do
-    php SimpleTests.php --merge-inis
+    php SimpleTest.php --merge-inis
     let COUNTER=COUNTER+1
     echo
 done
